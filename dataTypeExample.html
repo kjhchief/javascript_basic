@@ -31,13 +31,45 @@
     let age = 30;
     let weight = 67.5;
 
+    let result = -10 / 0;
+    console.log(result);
+    result = "김기정" / 5;
+    console.log(result);
+
     // typeof 연산
     console.log(typeof age); 
     console.log(typeof weight);
 
     // boolean형 
     let flag = true;
+    flag = "김재훈 천재";
+    flag = 10;
+    // 다 가능. 자동 형변환 해줌.
     console.log(typeof flag);
+    // 0, "", null, undefined 도 false로 형변환 시킴
+    flag = 0;
+    flag = " ";
+    if(flag){
+      console.log("참입니다");
+    }
+    let x;
+    console.log(x);
+
+    let res = "100" / '4';
+    console.log(res);
+
+    // 자바스크립트에는 강제형변환 연산자가 존재하지 않는다.
+    // int x = (int)15.6;
+    // 알아서 해줌
+    console.log("김재훈", "천재", 10);
+
+    let ssn = "680313-1234567"; // 기본 데이터타입
+    console.log(typeof ssn);
+    let c = ssn.charAt(1); // 객체로 자동 형변환
+    console.log(c);
+
+    // 레퍼런스(객체) 자료형 추후 설명
+
 
     // 레퍼런스(객체) 자료형
 

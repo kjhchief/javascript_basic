@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // if
+    const score = 88;
+    if (score >= 90) {
+      console.log("수");
+    } else if(score >= 80) {
+      console.log("우");
+    } else if(score >= 70) {
+      console.log("미");
+    } else if(score >= 60) {
+      console.log("양");
+    } else{
+      console.log("가");
+    }
+    console.log("switch");
+    console.log(Math.floor(score/10)); // 8.8 실수로 떨어짐. 자바일 때는 int형으로 되는데. int와 int 를 나누니까.
+    switch (Math.floor(score/10)) {
+      case 10:
+      case 9: console.log("수"); break;
+      case 8: console.log("우"); break;
+      case 7: console.log("미"); break;
+      case 6: console.log("양"); break;
+      default: console.log("가"); break;
+    }
+
+    // while
+    let index = 0;
+    let result = 0;
+    while (index <= 10) {
+      result += index;
+      index++;
+      console.log(result);
+    }
+    console.log(result);
+    console.log("-----------");
+    result = 0;
+    // for
+    for (let i =0; i <= 10; i++) {
+      result += i;
+      console.log(result);
+      
+    }
+    console.log(result);
+
+    // 구구단을 문서에 출력
+    document.write(`<table border='1'>`);
+    for(let i=2; i <= 9; i++) {
+      document.write(`<tr>`);
+        for(let j =1; j <=9; j++){
+          document.write(`<td>${i} * ${j} = ${i*j}</td>`);
+
+        }
+      document.write(`</tr>`);
+
+    }
+
+    document.write(`</table>`);
+    
+
+  </script>
+  
+</body>
+</html>

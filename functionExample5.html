@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 콜백함수(객체) (자스에서는 함수도 객체다)
+    function whatYourName(name, callback){
+      console.log(`이름 : ${name}`);
+      callback();
+    }
+
+    let callback = function(){
+      for(let i =0; i <=10; i++){
+        console.log(i);
+      }
+    }
+
+    function print(){
+      console.log("밥오");
+    }
+
+    whatYourName("김기정", callback);
+    whatYourName("후니훈", function(){
+      for(let i =0; i <=10; i++){
+        console.log(i);
+      }
+    }); // 콜백 쓰는 가장 일반적인 방법
+
+    whatYourName("부부부", print);
+
+    whatYourName("김혀나", function(){
+      console.log("집에가거라~~~~~~");
+    });
+    
+    console.log(typeof whatYourName);
+    console.log(typeof "김기정");
+    console.log(typeof 10);
+    console.log(typeof 10.532);
+    console.log(typeof {}); // 객체
+
+
+
+    // 함수 표현식
+    let sum = function(x, y){
+      return x+y ;
+    }
+
+    //화살표 함수
+    let sum2 = (x, y) => {
+      return x + y;
+    }
+    // 중괄호 한 줄 짜리는 생략 가능
+    let sum3 = (x, y) => x + y;
+    console.log(sum3(10, 20));
+
+    // 매개변수 1개면 fuction도 빼고, 중괄호도 생략하고.. 다 빼버렷. 단 함수 표현식에서만 가능. 
+    let sayHello = (name) => console.log(name);
+    sayHello("그랴지");
+
+    // self call
+    (function finish() {
+      console.log("오늘 수업 끝! 입니다.");
+    })();
+    
+
+
+  </script>
+  
+</body>
+</html>

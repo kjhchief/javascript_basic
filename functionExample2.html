@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Rest Parameter (자스의 가변인자)
+    function sum(...args) {
+      let result = 0;
+      // for (let i = 0; i < args.length; i++) {
+      //   result += args[i];
+      // }
+
+      // for (const number of args) { // 배열이 아닌 args 배열의 값 자체를 반환
+      //   result += num;
+      // }
+
+      for (const i in args) { // 값이 아닌 index를 반환
+          result += args[i];
+        }
+
+      return result;
+    }
+    console.log(sum(10)); 
+    console.log(sum(10, 20)); 
+    console.log(sum(10, 20, 30)); 
+
+  </script>
+  
+</body>
+</html>

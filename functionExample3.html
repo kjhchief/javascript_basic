@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 전역 변수
+    let global = "전역변수 입니다.";
+    
+    // 전역 함수
+    function doTask1() {
+      let local = "지역변수 입니다.";
+      console.log(global);
+      console.log(local);
+
+    }
+
+    function doTask2() {
+      // var 변수는 함수스코프이다.
+      if(10 > 5){
+        var v = 100; // var는 실행되면 doTask 함수 최상단으로 올라감.(스코프 맨 위로)
+      }
+      console.log(v); // 자바라면 안 됨. if 블록에서 선언된 변수니까.
+
+      // let 변수는 블록스코프이다.
+
+      let local = "지역변수 입니다.";
+      console.log(global);
+      console.log(local);
+      doTask1();
+    }
+
+    doTask2();
+    // console.log(local); // 이건 안 됨. local은 지역변수니까.
+
+    
+
+    // 중첩함수
+    function hypotenus(x, y) {
+      function square(num) {
+        return Math.pow(num, 2);
+    }
+      // 빗변의 길이를 반환
+      return square(x) + square(y);
+      
+    }
+    const result = hypotenus(10, 20);
+    console.log(result);
+
+    function square(num) {
+      return 0;
+
+    }
+
+  </script>
+  
+</body>
+</html>

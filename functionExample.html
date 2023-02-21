@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 함수 선언식
+    // 매개변수 없는 함수
+    // 전역함수(자바스크립트 전 영역에서 쓰는 함수. 독립적으로 딱 존재함)
+
+    // 함수 선언문은 평가단계에서 호이스팅되기 때문에 먼저 호출이 가능
+    // (써진 순서대로 실행이 아니라 먼저 맨 위로 올라가고 그 다음 실행이니까)
+    // showError();
+
+    function showError() {
+      // 스크립트 엔진이 제공하는 내장 함수 사용
+      alert("오류가 발생하였습니다.");
+      // return undefined;
+    }
+    // 함수 호출
+    let r= showError();
+    console.log(r);
+
+    // 매개변수가 있는 함수 선언
+    function sayHello(name) {
+      let message = `안녕, ${name}님`;
+      console.log(message);
+      // return undefined;
+    }
+
+    sayHello('김재훈');
+
+    // 리턴 값 있는 함수
+    function sum(x, y) {
+      return x + y;
+    }
+
+    let result = sum(10, 20);
+    console.log(result);
+
+    // 함수를 호출할 때, 정의된 매개변수와 전달인자의 개수가 일치하지 않더라도 호출이 가능하다.
+    result = sum(10); // y는 할당 안 되었기에 undefined를 내부적으로 전달한다.
+    console.log(result);
+
+    // 디폴트 파라메터(ES6 추가 문법)
+    function sendMessage(sender = 'Guest', message = '내용없음'){
+      if(!sender || !message){ // 자바면 sender == null; 이런식으로 할듯.
+        return;
+      }
+      console.log(`${sender} : ${message}`);
+    }
+
+    sendMessage();
+    sendMessage("방그리");
+    sendMessage("방그리", "안녕하세요요요");
+
+    
+
+  </script>
+  
+</body>
+</html>
