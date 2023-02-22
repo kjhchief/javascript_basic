@@ -6,17 +6,28 @@ section{
   width: 50%;
   margin:0 auto;
   border: 1px solid orange;
+  text-align: center;
+}
+section div{
+  margin: 10px 0 10px 0;
+}
+section button {
+  padding: 4px;
 }
 
 th{
-  background-color: aquamarine;
+  padding: 4px;
+  background-color: bisque;
+}
+table{
+  margin:0 auto;
 }
 
 h1{
-  text-align: center;
+  
 }
 div.numBox{
 }
 div.subjectBox input{
-  width: 30px;
+  width: 29px;
 }

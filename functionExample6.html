@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Function 생성자 함수를 이용한 함수 정의
+    // function sum(x, y){
+    //   return x + y;
+    // }
+    // 동적 함수 생성. 프로토타입 개념 알려면 알아야 함.
+    // 생성자 함수를 정의하면 내부적으로는 얘를 호출하여 생성한다.
+    let sum = new Function('x', 'y', 'return x + y');
+    const result = sum(10,20);
+    console.log(result);
+    // 개발자들이 사용할 일은 거의 없다.
+    // 그러나, 스크립트 엔진의 핵심 기능이다.
+
+
+
+  </script>
+  
+</body>
+</html>

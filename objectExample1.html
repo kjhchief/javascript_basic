@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    let name ="전역"
+    let age = 1
+    let gender = "MMM"
+
+    // 객체 리터럴 표현식을 이용한 객체(인스턴스) 생성
+    let user = {
+      name: "김재훈",
+      // 속성명 특수문자 포함된 경우 ['']로만 접근 가능
+      age: 34,
+      gender: "male",
+      showInfo : function(){ // 메소드
+        console.log(`${this.name}, ${this.age}, ${this.gender}`);
+        // 객체 안에서 객체의 프로퍼티 접근하려면 반드시 this 붙이자. 안 붙이면 전역(윈도우 객체)에서 찾는다. 
+      },
+      toString : function(){
+        return `${this.name}, ${this.age}, ${this.gender}`;
+      }
+    } // 메모리에서는 user 객체가 만들어진 것. user는 레퍼런스 변수, 나머지 { }안에 내용물이 객체.
+
+    console.log(user.name);
+    console.log(user.age);
+    console.log(user.gender);
+    user.showInfo();
+    console.log(user.toString());
+    let propertyName = 'name';
+    // 동적 접근 시 자주 사용
+    console.log(user['name']); // name이 키 값을 의미.
+    user['showInfo']();
+
+    console.log(user.xxx); //undefined
+    console.log(user); //객체 안에 내용 보기. 
+    console.log(typeof user);
+    console.dir(user);
+    console.clear();// 콘솔 다 지우는 메소드
+
+    // 새로운 프로퍼티 추가
+    user.address = "서울시 노원구 ....";
+    console.dir(user);
+
+    //프로퍼티 변경
+    user.name = "후니훈";
+
+    // 프로퍼티 삭제
+    delete user.gender;
+
+    // 프로퍼티 존재하는지 여부
+    
+    console.log('name' in user);
+
+    // 함수 표현식 대신 화살표 함수 사용시 this 유의사항
+    let user2 = {
+      name: "박재훈",
+      age: 24,
+      gender: "male",
+      showInfo : () => console.log (`이름: ${this.name}, 나이: ${this.age}, 성별: ${this.gender}`) // 메소드
+    }
+    
+    user2.showInfo();
+
+
+
+  </script>
+  
+</body>
+</html>

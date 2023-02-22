@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 동일한 객체를 여러개 생성할 수 있는 함수 정의(팩토리 함수)
+    function makeUser(name, age, gender){
+      let user = {name: name,
+                  age: age,
+                  gender: gender
+      };
+      return user;
+    }
+
+    let jinho = makeUser("송진호", 20, "male");
+    let jaehoon = makeUser("김재훈", 22, "male");
+    let heyno = makeUser("김현아", 22, "female");
+    // 이걸 자바에서는 클래스가 한다. 자스는 클래스가 없으니 팩토리 함수를 쓴다.
+    console.log(jinho);
+    console.log(jaehoon);
+    console.log(heyno);
+
+  </script>
+  
+</body>
+</html>

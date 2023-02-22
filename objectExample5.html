@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 평가단계에서 스크립트 엔진은 4개의 기본 객체를 메모리에 생성한다.
+    // #1. Function 생성자 함수가 메모리에 생성되어 있다. 
+    function Function(){
+    // 함수 만들때 쓰이는 생성자 함수. 이미 생성 되어있다.
+    }
+    // #2. Function 이라는 이름의 프로토타입 객체가 자동 생성 된다. 
+    // #3. let Object = new Function(); 1번 함수에 의해 Object라는 객체가 만들어지는데, 이것도 객체가 아니라 생성자 함수가 된다.
+    // #4. Object 라는 이름의 프로토타입 객체가 자동 생성된다.
+
+    // 생성자 함수를 이용한 일상생활의 객체를 표현
+    // 관례상 대문자.
+    function Student(ssn, name, korean, math, english) {
+      // this = {}; 요게 만들어졌다. 스크립트 엔진에 의해.
+      // 속성 추가
+      this.ssn = ssn;
+      this.name = name;
+      this.korean = korean;
+      this.math = math;
+      this.english = english;
+
+      // 기능 추가
+      // return this; 요것도 자동 추가
+    }
+    // 공통 속성 추가
+    Student.prototype.schoolName = "Ezen middle schoole";
+
+    // Student 생성자 함수가 참조하고 있는 Student 프로토타입 객체에 메소드 추가
+    Student.prototype.getSum = function(){
+      return this.korean + this.math + this.english;
+    }
+    Student.prototype.getAverage = function(){
+      return this.getSum() / 3;
+    }
+    // Object의 프로토타입 객체의 메소드 재정의(Overriding)
+    Student.prototype.toString = function(){
+      return `${this.ssn}\t${this.name}\t${this.korean}\t${this.english}\t${this.math}\t${this.getSum()}\t${this.getAverage()}`;
+    }
+
+    // 생성자 함수는 호출시 new 붙여야함.
+    let hiwon = new Student(10, "김희원", 90, 100, 80);
+    let chanwool = new Student(11, "박찬울", 100, 90, 80);
+    let kim = new Student (12, "김기정", 50,50, 50);
+    // console.log(hiwon.ssn);
+    // Student 프로토타입 객체의 메소드 재사용
+    console.log(hiwon.toString());
+    console.log(chanwool.toString());
+
+    console.log(`평균점수: ${hiwon.getAverage()}`);
+    console.log("------------------");
+    console.log(hiwon.valueOf());
+    console.log(hiwon.toString());
+    let exist = kim.hasOwnProperty('ssn');
+    console.log(`ssn키가 존재하는가? ${exist}`);
+    console.log('ssn' in kim);
+    console.log(Student.prototype === kim.__proto__);
+    
+    
+
+    // 생성자 함수를 바로 호출. 이렇게 하면 this ={}, return this; 호출 안 됨.
+    // let kim = Student (12, "김기정", 50,50, 50);
+    console.log(kim);
+
+    // 자바스크립트에는 미리 정의되어있는 생성자 함수(표준객체)들이 정의되어 있다.
+    // 자바에서 만들어진 메소드(표준 라이브러리) 쓰는거랑 비슷함.
+    let str = new String("김재훈입니다.");
+    console.log(str.charAt(0));
+    let str2 = String(500);
+    console.log(typeof str2);
+
+    let number = new Number(67.89);
+    
+    console.log(number.toFixed(1));
+    // 형변환 함수
+    let num = Number("1000");
+    console.log(num + 500);
+
+    let bool = new Boolean(true);
+    console.log(Function.prototype.toString());
+    console.log(Student.toString());
+
+    // 메모리에 생성된 kim이 어떤 생성자로부터 생성되었는지 체크
+    if(kim.constructor === Student){
+      console.log("Student로부터 생성된 객체이다.");
+    }
+
+    console.dir(kim); //객체 구조 상세하게 볼 때 유용한 메소드
+    console.log(Student.prototype.schoolName);
+    console.log(kim.schoolName); 
+
+    console.log(kim instanceof Student);
+    console.log(kim instanceof Object);
+    
+
+    
+
+  </script>
+  
+</body>
+</html>
