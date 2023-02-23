@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Function 프로토타입 객체의 주요메소드
+    let user = {
+      name : "김기정",
+      age : 30
+    }
+
+    function show(){
+      console.log(`${this.name}: ${this.age}`);
+    }
+
+    function addProperty(name, value){
+      this[name] = value;
+    }
+
+    show();
+    show.call(user); // 전역함수였던 show를 user 객체 안의 메소드로 넣는다는 뜻.
+
+    addProperty("hobby","soccer");
+    addProperty("address","서울시 노원구");
+
+    addProperty.call(user, "hobby","soccer");
+    addProperty.call(user, "address","서울시 노원구");
+    addProperty.apply(user, ["gender", "male"]);
+    let addUserProperty = addProperty.bind(user);
+    addUserProperty("weight", 67.8);
+
+    console.dir(window);
+    console.dir(user);
+
+
+  </script>
+  
+</body>
+</html>
