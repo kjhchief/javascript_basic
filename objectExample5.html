@@ -99,7 +99,26 @@
 
     console.log(kim instanceof Student);
     console.log(kim instanceof Object);
-    
+    console.clear();
+
+    // typeof, instance of, constructor 비교
+    let today = new Date();
+    console.log(today instanceof Object);
+    console.log(today.constructor === Object);
+    console.log(today.constructor === Date);
+
+    function xxx(today){
+      if(today.constructor !== Date){
+        alert('전달 인자가 잘못 되었다.');
+        return;
+      } 
+      console.log("기능 수행");
+      
+    }
+
+    // xxx('후니훈');
+    xxx(new Date());
+
 
     
 
