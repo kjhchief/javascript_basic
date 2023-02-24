@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 콜백함수(객체)
+    function whatYourName(name, callback) {
+      console.log(`이름 : ${name}`);
+      callback();
+    }
+
+    let callback = function(){
+      for(let i=0; i<=10; i++){
+        console.log(i);
+      }      
+    }
+
+    function print(){
+      console.log("바보");
+    }
+
+    whatYourName("김기정", callback);
+    whatYourName("박기정", function(){
+      for(let i=0; i<=10; i++){
+        console.log(i);
+      }
+    });
+    whatYourName("박찬울", print);
+
+    whatYourName("김현아", function(){
+      console.log("집에 가....");
+    });
+
+    console.log(typeof whatYourName);
+    console.log(typeof "김기정");
+    console.log(typeof 10);
+    console.log(typeof 10.5);
+    console.log(typeof {}); // 객체
+
+    // 함수 표현식
+    let sum = function(x, y){
+      return x + y;
+    }
+    // 화살표 함수
+    let sum2 = (x, y) => {
+      return x + y;
+    }
+
+    let sum3 = (x, y) =>  x + y;
+    console.log(sum3(10, 20));
+
+    let sayHello = name => console.log(name);
+    sayHello("방그리");
+
+    // self call
+    (function finish(){
+      console.log("오늘 수업 끝입니다...");
+    })();
+
+    //finish();
+
+   
+  </script>
+  
+</body>
+</html>

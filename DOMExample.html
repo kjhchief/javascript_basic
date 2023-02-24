@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="title">이것이 돔입니다..</h1>
+  <div>이것이 박스 입니다.</div>
+  
+  <script>
+    let elements = document.getElementsByTagName("h1");
+    console.log(elements.length);
+    console.dir(elements);
+    // console.log(elements[0].firstChild);
+    // alert(elements[0].firstChild.nodeValue);
+
+    let element = document.getElementById("title")
+    console.log(element.firstChild);
+    console.dir(element);
+
+  </script>
+</body>
+</html>

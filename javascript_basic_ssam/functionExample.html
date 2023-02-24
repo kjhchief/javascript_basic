@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 함수 선언식
+    // 매개변수 없는 함수
+    // 전역함수
+
+    // 함수 선언문은 평가단계에서 호이스팅되기 때문에 먼저 호출이 가능
+    showError();
+
+    function  showError(){
+      // 스크립트엔진이 제공하는 내장함수 사용
+      alert("오류가 발생하였습니다. 다시한번 시도해 주세요..");
+      //return undefined;
+    }
+    // 함수 호출
+    let r = showError();
+    console.log(r);
+
+
+
+    // 매개변수가 있는 함수 선언
+    function sayHello(name){
+      let message = `안녕, ${name}님`;
+      console.log(message);
+      //return undefined;
+    }
+
+    sayHello('김기정');
+
+    function sum(x, y){
+      return x + y;
+    }
+
+    let result = sum(10, 20);
+    console.log(result);
+
+    // 함수를 호출할 때, 정의된 매개변수와 전달인자의 개수가 일치하지 않더라도 호출이 가능하다
+    result = sum(10, 20, 30);
+    console.log(result);
+
+    function sendMessage(sender, message){
+      if( !sender || !message){
+        return;
+      }
+      console.log(`${sender} : ${message}`);
+    }
+
+    sendMessage();
+    sendMessage("방그리");
+    sendMessage("방그리", "안녕하세요...");
+
+    // 디폴트 파라메터(ES6 추가 문법)
+    function sendMessage(sender='Guest', message='메시지 없음'){
+          console.log(`${sender} : ${message}`);
+    }
+
+    sendMessage();
+    sendMessage('방그리', '하이루');
+  
+  </script>
+  
+</body>
+</html>

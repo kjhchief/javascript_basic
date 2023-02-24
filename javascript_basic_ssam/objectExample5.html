@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 평가단계에서 스크립트 엔진은 4개의 기본 함수(객체)를 메모리에 생성한다.
+    //#1.Function 생성자 함수가 메모리에 생성되어 있다
+    //#2.Function 이라는 이름의 프로토타입 객체가 자동 생성 된다.
+    //#3.let Object = new Function();
+    //#4.Object 라는 이름의 프로토타입 객체가 자동 생성된다.
+
+    // 생성자 함수를 이용한 일상생활의 객체를 표현
+    function Student(ssn, name, korean, math, english){
+      // this = {};
+      // 속성 추가
+      this.ssn = ssn;
+      this.name = name;
+      this.korean = korean;
+      this.math = math;
+      this.english = english;
+      // return this;
+    }
+
+    // 공통 속성 추가
+    Student.prototype.schooName = "EZEN MIDDLE SCHOOL";
+    // Student 생성자 함수가 참조하고 있는 Student 프로토타입 객체에 메소드 추가
+    Student.prototype.getSum = function(){
+        return this.korean + this.math + this.english;
+    }
+    
+    Student.prototype.getAverage = function(){
+        return this.getSum() / 3;
+    }
+
+    // Object의 프로토타입 객체의 메소드 재정의(Overriding)
+    Student.prototype.toString = function(){
+        return `${this.ssn}\t${this.name}\t${this.korean}\t${this.english}\t${this.math}\t${this.getSum()}\t${this.getAverage()}`;
+    }
+    
+    let hiwon = new Student(10, "김희원", 90, 100, 80);
+    let chanwool = new Student(11, "박찬울", 100, 90, 80);
+    let kim = new Student(12, "김기정", 50, 50, 50);
+
+    // console.log(hiwon.ssn);
+    // Student 프로토타입 객체의 메소드 재용
+    console.log(hiwon.toString());
+    console.log(chanwool.toString());
+    console.log(kim.toString());
+    console.log(hiwon.getAverage());
+    
+    console.log("-----------");
+    // Object 프로토타입 객체의 메소드 재사용
+    console.log(hiwon.valueOf());
+    console.log(hiwon.toString());
+    let exist = kim.hasOwnProperty('ssn');
+    console.log(exist);
+    console.log('ssn' in kim);
+
+    console.log(Student.prototype === kim.__proto__);
+
+    
+
+    // 자바스크립트에는 미리 정의되어 생성자 함수(표준객체)들이 정의되어 있다.
+    let str = new String("김기정입니다..");
+    console.log(str.charAt(0));
+    let str2 = String(500);
+    console.log(typeof str2);
+
+    let number = new Number(67.89);
+    console.log(number.toFixed(1));
+    // 형변환 함수
+    let num = Number("1000");
+    console.log(num + 500);
+
+    let bool = new Boolean(true);
+
+    // Function 생성자 함수의 프로토타입 객체 접근
+    console.log(Function.prototype.toString());
+    console.log(Student.toString());
+
+    // 메모리에 생성된 kim 이 어떤 생성자로부터 생성되었는지 체크
+    if(kim.constructor === Student){
+      console.log("Student로부터 생성된 객체이다...");
+    }
+
+    console.dir(kim);
+
+    console.log(Student.prototype.schooName);
+    console.log(kim.schooName);
+
+    console.log(kim instanceof Student);
+    console.log(kim instanceof Object);
+
+    // 내일 시작 내용
+    // typeof, instanceof, constructor 비교
+    console.clear();
+    let today = new Date();
+    console.log(today instanceof Object);
+    console.log(today instanceof Date);
+    
+    console.log(today.constructor === Object);
+    console.log(today.constructor === Date);
+
+    function xxx (today){
+      if(today.constructor !== Date){
+        alert('전달인자가 잘못되었습니다..');
+        return;
+      }
+      console.log("기능 수행");
+    }
+
+    xxx("김기정 ");
+    xxx(new Date());
+
+
+
+
+
+
+
+
+  </script>
+  
+</body>
+</html>

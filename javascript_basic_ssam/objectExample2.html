@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // for ~ in 반복문은 배열과 객체의 속성을 순회(반복)할 때 사용한다.
+    // 자바스크립트 객체는 Map 객체이다..
+
+    // 자바스크립에서 배열 선언, 생성, 초기화 한방에
+    let array = [10, 20, 30, 40, 50];
+    for (let i = 0; i < array.length; i++) {
+      console.log(array[i]);      
+    }
+
+    for (const i in array) {
+      console.log(array[i]);     
+    }
+
+    for (const value of array) {
+      console.log(value);      
+    }
+
+    // 객체의 프로퍼티 반복(순회)
+    let user = {
+      name : "김기정",
+      age  : 30,
+      gender : "male",
+      showInfo : function(){
+        console.log(`${this.name}, ${this.age}, ${this.gender}`);
+      },
+      toString : function(){
+        return `${this.name}, ${this.age}, ${this.gender}`;
+      }
+    }
+    
+
+    // for ~ in 문
+    for (const key in user) {
+     console.log(`${key} : ${user[key]}`);    
+    }
+
+
+
+
+  </script>
+  
+</body>
+</html>

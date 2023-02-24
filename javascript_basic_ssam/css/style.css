@@ -1,0 +1,13 @@
+p {
+  color: gold;
+  font-size: 20pt;
+}
+div {
+  background-color: aqua;
+}
+
+.sample {
+  background-color: red;
+  color: yellow;
+  font-size: 50pt;
+}

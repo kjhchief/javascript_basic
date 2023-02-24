@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 동일한 객체를 여러개 생성할 수 있는 함수 정의(팩토리 함수)
+    function makeUser(name, age, gender){
+      return { name, age, gender };
+    }
+
+    let jinho = makeUser("송진호", 20, "male");
+    let jaehoon = makeUser("김재훈", 22, "male");
+    let heyna = makeUser("김현아", 22, "female");
+
+    console.log(jinho);
+    console.log(jaehoon);
+    console.log(heyna);
+
+  </script>
+  
+</body>
+</html>

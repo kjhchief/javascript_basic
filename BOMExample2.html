@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>이것이 BOM이다</h2>
+
+  <script>
+    // Navigator
+    console.dir(navigator);
+    console.log(`현재 당신이 사용하고 계신 브라우저 이름은 ${navigator.appVersion}입니다.`);
+
+    // Location
+    console.dir(location);
+    // URL 이동
+    // location.href = "https://www.naver.com";
+    // location.replace("https://www.naver.com");
+
+    // history.back(); // 뒤로 가기
+    // history.forward(); // 앞으로 가기
+
+
+
+  </script>
+  <a href="http://www.naver.com">네이버</a><br>
+  <a href="javascript:history.back();">이전 페이지로 이동</a><br>
+  <a href="javascript:history.forward();">앞 페이지로 이동</a>
+  
+</body>
+</html>

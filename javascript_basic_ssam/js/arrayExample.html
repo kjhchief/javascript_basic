@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Array 객체가 제공하는 다양한 메소드들...
+    // push(), pop(),.....................
+    let array = [10, 7, 9, 6, 3, 2, 8, 5, 1, 4];
+    let array2 = ["c", "b", "a"];
+    // for문
+    // for ~ in
+    // for ~ of
+    // callback 함수 활용
+    array.forEach(value => console.log(value));
+
+    // 정렬하기
+    //array.sort();
+    // 정렬 로직을 콜백함수를 이용하여 지정
+    array.sort(function(x, y){
+ //     return x - y; // 오름차순 정렬
+      return y - x;   // 내림차순 정렬
+    });
+    array.forEach(value => console.log(value));
+
+    
+
+
+
+  </script>
+  
+</body>
+</html>

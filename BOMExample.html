@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>이것이 BOM이다</h2>
+
+  <script>
+    // 미리 생성되어 있는 디폴트 객체
+    console.dir(window);
+    console.log(typeof window);
+    console.log(window.constructor);
+    // let url = window.location.href;
+    let url = location.href;
+    
+    // window객체가 제공하는 다양한 메소드 
+    // window.alert(url);
+    // alert(url);
+
+    // const food = prompt("점심 뭐 먹을거야?"); 
+    // alert(`${food}를 드셨군요.`);
+
+    // const yn = confirm("진행할까요?");
+    // // console.log(yn);
+    // if(yn){
+    //   console.log("진행합니다.");
+    // }else{
+    //   console.log("진행을 취소합니다.");
+    // }
+
+    let newWindow= window.open("index.html", "myChang", "width = 500, height =300");
+    if(newWindow === null){
+      alert("팝업 차단을 해제해주세요")
+    }
+    // 추후 이벤트 처리
+    // newWindow.close();
+    // window.close();
+
+  </script>
+  
+</body>
+</html>

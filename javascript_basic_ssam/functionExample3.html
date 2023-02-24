@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 전역변수(공유)
+    let global = "전역변수입니다..";
+
+    // 전역함수
+    function  doTask1(){
+      let local = "지역변수입니다..";
+      console.log(global);
+      console.log(local);
+    }
+
+    function  doTask2(){
+      // var 변수는 함수스코프이다..
+      if(10 > 5){
+        var v = 100;
+      }
+      console.log(v);
+      // let 변수는 블록스코프이다..
+
+      let local = "지역변수입니다..";
+      console.log(global);
+      console.log(local);
+      doTask1();
+    }
+
+    doTask2();
+    //console.log(local);
+    // 중첩함수
+    function hypotenus(x, y){
+      // 중첩함수
+      function square(num){
+        return Math.pow(num, 2);      
+      }
+      return square(x) + square(y);
+      // 빗변의 길이를 반환
+    }
+
+    const result = hypotenus(10, 20);
+    console.log(result);
+    
+    function square(num){
+      return 0;      
+    }
+
+   
+  </script>
+  
+</body>
+</html>

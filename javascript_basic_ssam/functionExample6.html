@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Function 생성자 함수를 이용한 함수 정의
+    //  동적 함수 생성
+    let sum = new Function('x', 'y', 'return x + y');
+    const result = sum(10, 20);
+    console.log(result);
+
+    // 개발자 들이 사용할 일은 거의 없다..
+    // 스크립트엔진의 핵심 기능이다....
+
+  </script>
+  
+</body>
+</html>

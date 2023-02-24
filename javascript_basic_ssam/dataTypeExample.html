@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //자바스크립 데이터 타입
+    // 기본(원시) 자료형
+    // 동적 데이터 타입
+    // string 타입
+    let name;
+    name = '김기정';
+    name = name + "바보";
+    console.log(name);
+    // 템플릿 문자열
+    let message = `안녕하세요 ${name}`;
+    console.log(message);
+
+    // 템플릿 문자열은 연산도 가능
+    console.log(`3 + 4 = ${3 + 4}`);
+
+    // 제어문자, 이스케이프문자 처리
+    let test = "\"자바스크립트\"가\t왕이여....";
+    console.log(test);
+    
+    // 숫자 자료형
+    let age = 30;
+    let weight = 67.5;
+
+    let result = -10 / 0;
+    console.log(result);
+    result = "10" / 5; // 자동형변환
+    console.log(result);
+
+    // typeof 연산
+    console.log(typeof age);
+    console.log(typeof weight);
+
+    // boolean 형
+    let flag = true; // false
+    // 동적 데이터타입 (동적타입핑)
+    flag = "김기정 바보";
+    flag = 10;
+    console.log(typeof flag);
+    // 0, '', null, undefined 도 false로 인식
+    flag = 0;
+    flag = ' ';
+    flag = null;
+    if(flag){
+      console.log("참입니다...");
+    }
+
+    // undefined
+    let x;
+    console.log(x);
+
+    let res = "100" / "10";
+    console.log(res);
+
+    // 자바스크립트에는 강제형변환 연산자가 존재하지 않는다.
+    //int x = (int)15.6;
+
+    console.log("김기정", "바보", 10);
+
+    let ssn = "680313-1234567"; // 기본 데이터타입
+    console.log(typeof ssn);
+    let c = ssn.charAt(1); // 객체로 자동 형변환
+    console.log(c);
+   
+    // 레퍼런스(객체) 자료형 추후  설명
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Function 프로토타입 객체의 주요메소드
+    let user = {
+      name : "김기정",
+      age : 30,
+    };
+
+    function show(){
+      console.log(`${this.name}: ${this.age}`);
+    }
+
+    function addPeroperty(name, value){
+      this[name] = value;
+    }
+
+    show();
+    show.call(user);
+    
+    addPeroperty("hobby", "soccer");    
+    addPeroperty("address", "서울시 노원구");
+
+    addPeroperty.call(user, "hobby", "soccer");
+    addPeroperty.call(user, "address", "서울시 노원구");
+    addPeroperty.apply(user, ["gender", "male"]);
+    let addUserProperty = addPeroperty.bind(user);
+    addUserProperty("weight", 67.8);
+
+    console.dir(window);
+    console.dir(user);
+
+
+    </script>
+  
+</body>
+</html>

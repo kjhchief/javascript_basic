@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Study</title>
+  <style>
+    #red{
+      background-color: red;
+      color: white;
+
+    }
+
+    /* 클래스 선택자 */
+    .contents{
+      background-color: yellow;
+      color: blue;
+      border: 1px solid red;
+      font-size: 15pt;
+    }
+
+  </style>
+</head>
+<body>
+  <h2 id="dom" style="background-color: aqua; border: red solid 2px;">Document Object Model</h2>
+  <p>문서 객체 모델은 ...................</p>
+  
+  <ul id="list">
+    <li>검색</li>
+    <li>수정</li>
+    <li>삭제</li>
+  </ul>
+
+  <h2 id="red">Browser Object Model</h2>
+  <p class="contents">브라우저 객체 모델은 ....................</p>
+  <ul id ="bom" class="contents">
+    <li>Window</li>
+    <li>Location</li>
+    <li>History</li>
+  </ul>
+
+  <script>
+    console.log(document.nodeName);
+    console.log(document.nodeType);
+    console.log(document.nodeValue);
+
+    let htmlElement = document.documentElement;
+    console.dir(htmlElement);
+    console.log(htmlElement.nodeName); // 노드 이름
+    console.log(htmlElement.nodeType); // 노드 타입
+    console.log(Node.ELEMENT_NODE); 
+    console.log(Node.ATTRIBUTE_NODE); 
+    console.log(Node.DOCUMENT_NODE); 
+
+    if(htmlElement.nodeType === Node.ELEMENT_NODE){
+      console.log("엘리먼트 노드입니다.");
+    }
+
+    console.log(htmlElement.nodeValue); // 노드값
+    console.log();
+
+    // 태그이름으로 엘리먼트 얻기
+    let pCollection= document.getElementsByTagName("p")
+    for (const pElement of pCollection) {
+      // console.log(pElement);
+      let text = pElement.firstChild;
+      
+      console.log(text.nodeValue);
+    }
+    console.clear();
+    
+
+    // 아이디 속성으로 접근하기
+    let h2Element = document.getElementById("dom");
+    console.dir(h2Element);
+    
+    // CSS 클래스 선택자로 접근하기
+    let contentsElements = document.getElementsByClassName("contents");
+    console.dir(contentsElements);
+    
+    // CSS 선택자로 일관되게 접근하기
+    let h2Element2 = document.querySelector("#red")
+    console.dir(h2Element2);
+
+    let nodeList = document.querySelectorAll(".contents");
+    nodeList.forEach(element => {
+      console.log(element);
+    });
+    let values = nodeList.values();
+    console.dir(values);
+
+    // 추가
+    let newLi = document.createElement("li");
+    let newText = document.createTextNode("에헤라디야");
+    newLi.appendChild(newText);
+    let ul = document.querySelector("#list");
+    ul.appendChild(newLi);
+
+    ul.innerHTML = "<li>한줄로 끝내버렷</li><li>한줄로 끝내버렷</li><li>한줄로 끝내버렷</li>";
+
+    let removeElement = document.querySelector("#bom").firstElementChild;
+    console.dir(removeElement);
+    document.querySelector("#bom").removeChild(removeElement);
+
+  </script>
+</body>
+</html>

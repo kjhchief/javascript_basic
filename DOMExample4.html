@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Study</title>
+  <style>
+    /* 클래스 선택자 */
+    .contents{
+      background-color: yellow;
+      color: blue;
+      border: 1px solid red;
+      font-size: 15pt;
+    }
+
+  </style>
+
+</head>
+<body>
+  <h2>타이틀 1입니다.</h2>
+  <p>내용입니다.</p>
+  <h2>타이틀 2입니다.</h2>
+  <p>내용입니다.</p>
+  <h2>타이틀 3입니다.</h2>
+  <p>내용입니다.</p>
+  <h2>타이틀 3입니다.</h2>
+  <p>내용입니다.</p>
+  <h2>타이틀 3입니다.</h2>
+  <p>내용입니다.</p>
+
+  <script>
+    let list = document.querySelectorAll("h2");
+    list.forEach(element => {
+      // element.style['background-color'] ="blue"; // CSS에서 사용하는 속성을 프로퍼티로 제공
+      // element.style['color'] = "yellow";
+      // element.style['border'] = "2px solid red";
+
+      element.style.display = "none";
+    });
+
+    // 클래스 선택자로 스타일 적용
+    list = document.querySelectorAll("p");
+    list.forEach(element => {
+      element.className = "contents";
+    });
+
+
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    // 생성자 함수를 이용한 일상생활의 객체를 표현
+    function Student(ssn, name, korean, math, english){
+      // this = {};
+      // 속성 추가
+      this.ssn = ssn;
+      this.name = name;
+      this.korean = korean;
+      this.math = math;
+      this.english = english;
+
+      // 기능 추가
+      // 점수 총점 반환
+      this.getSum = function(){
+        return this.korean + this.math + this.english;
+      }
+
+      // 점수 평균 반환
+      this.getAverage = function(){
+        return this.getSum() / 3;
+      }
+      
+      // 학생 모든 정보 반환
+      this.toString = function(){
+        return `${this.ssn}\t${this.name}\t${this.korean}\t${this.english}\t${this.math}\t${this.getSum()}\t${this.getAverage()}`;
+      }
+      // return this;
+    }
+
+    let hiwon = new Student(10, "김희원", 90, 100, 80);
+    let chanwool = new Student(11, "박찬울", 100, 90, 80);
+    let kim = new Student(12, "김기정", 50, 50, 50);
+
+    // console.log(hiwon.ssn);
+    console.log(hiwon.toString());
+    console.log(chanwool.toString());
+    console.log(kim.toString());
+
+    // 자바스크립트에는 미리 정의되어 생성자 함수(표준객체)들이 정의되어 있다.
+    let str = new String("김기정입니다..");
+    console.log(str.charAt(0));
+    let str2 = String(500);
+    console.log(typeof str2);
+
+    let number = new Number(67.89);
+    console.log(number.toFixed(1));
+    // 형변환 함수
+    let num = Number("1000");
+    console.log(num + 500);
+
+    let bool = new Boolean(true);
+
+
+
+
+
+
+
+
+
+  </script>
+  
+</body>
+</html>

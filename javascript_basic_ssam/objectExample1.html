@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 객체 리터럴 표현식을 이용한 객체(인스턴스) 생성
+    // 자바에서는 객체 묵시적 생성
+    let user = {
+      name : "김기정",
+      age  : 30,
+      gender : "male",
+      showInfo : function(){
+        console.log(`${this.name}, ${this.age}, ${this.gender}`);
+      },
+      toString : function(){
+        return `${this.name}, ${this.age}, ${this.gender}`;
+      }
+    }
+    console.log(user.name);
+    console.log(user.age);
+    console.log(user.gender);
+    user.showInfo();
+    console.log(user.toString());
+    let propertyName = 'name';
+    // 동적 접근 시 자주 사용
+    console.log(user['name']);
+    console.log(user[propertyName]);
+    user['showInfo']();
+
+    console.log(user.xxx); // undefined
+    console.log(user);
+    console.dir(user);
+    console.clear();
+    console.log("~~~~");
+
+    // 새로운 프로퍼티 추가
+    user.address = "서울시 노원구 ....";
+    console.dir(user);
+
+    // 프로퍼티 변경
+    user.name = "방그리";
+    console.dir(user);
+
+    // 프로퍼티 삭제
+    delete user.gender;
+    console.dir(user);
+
+    //  프로퍼티 존재하는지 여부
+    console.log('name' in user);
+
+    // 함수 표현식 대신 화살표 함수 사용 시 this 유의사항
+    let user2 = {
+      name : "박기정",
+      age  : 40,
+      gender : "male",
+      showInfo : () => console.log(`${this.name}, ${this.age}, ${this.gender}`)
+    }
+
+    user2.showInfo();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 스크립트 엔진이 메모리 상에 브라우저와 관련된 프로퍼티와 메소드를 정의하고
+    // 있는 window 라는 이름의 표준 내장객체를 생성해 놓는다..
+    console.dir(window);
+    //window.alert('요넘이 윈도우 객체입니다...');
+    // 전역함수...
+    //alert('');
+
+    // 전역변수
+    //let message = "김기정 바보";
+    window.message = "김기정 바보";
+    ///console.log(message);
+    console.log(window.message);
+
+    // 전역함수 정의
+    function doTask(){
+      console.log("전역 함수입니다....");
+      console.log(this.alert('윈도우입니다..'));
+    }
+    doTask();    
+
+
+  </script>
+  
+</body>
+</html>

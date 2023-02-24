@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 자바스크립에서 배열 다루기
+    // 자바의 Collection과 같이 동작한다.
+    // let array = new Array(); // 맵
+    // let array = new Array(10); // 맵
+    let array = new Array(1, 2, 3, 4, 5); // 맵
+    console.log(array.length);
+    console.dir(array);
+
+    // 배열 리터럴 표현식을 이용한 Array 생성
+    let array2 = [1, 2, 3, 4, 5, "김기정", "이동훈", 
+              new Date(), new Number(), function(){
+                console.log("함수입니다...");
+              }];
+    console.dir(array2);
+
+    console.log(array2[5]); // "5"
+    console.log(array2["5"]); 
+    let fn = array2[9];
+    fn();
+
+    // 배열 전체 삭제
+    array2.length = 0;
+    console.log(array2.length);
+
+    // 배열에 요소 추가
+    array2.push("김기정");
+    array2.push("박기정");
+    array2.push(1000);
+    console.log(array2.length);
+    array2.unshift("김현아");
+    console.dir(array2);
+
+    // 배열 요소 삭제
+    // delete array2['0'];
+    array2.shift();
+    array2.pop();
+    console.dir(array2);
+
+    array2 = [10, 20, , undefined, null, "김기정"];
+    for (const value of array2) {
+      if(!value){
+        continue;
+      }
+      console.log(value);      
+    }
+
+
+
+
+
+  </script>
+  
+</body>
+</html>
