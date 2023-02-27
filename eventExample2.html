@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+<body>
+  <form action="">
+    아이디 : <input type="text" id="id"><br>
+    이름 : <input type="text" id="name"><br>
+
+    <p>좋아하는 애완동물을 선택하세요</p>
+    <select name="pets" id="pet-select">
+      <option value="">선택하세요</option>
+      <option value="dog">갱얼쥐</option>
+      <option value="cat">냥이</option>
+      <option value="hamster">햄스터</option>
+    </select><br>
+    메시지 : <input type="text" id="comment">
+  </form>
+  <p id ="message"></p>
+
+  <script>
+    document.querySelector("#id").addEventListener("focus", event => {
+      event.target.style.backgroundColor = 'yellow';
+    })
+
+    document.querySelector("#id").addEventListener("blur", event => {
+      event.target.style.backgroundColor = 'white';
+      event.target.disabled = true;
+    })
+
+    document.querySelector("#pet-select").addEventListener("change", event => {
+      // let index = event.target.selectedIndex; // 선택순서
+      // let options = event.target.options; // 옵션들 배열. options는 배열이다
+      // let selectedOption = options[index];
+      // alert(`${selectedOption.text}를 선택하였습니다.`);
+      alert(`${event.target.options[event.target.selectedIndex].text}를 선택하였습니다.`);
+    })
+
+    document.querySelector("#comment").addEventListener("input", event => {
+      const message = event.target.value;
+      // console.log(message);
+      document.querySelector("#message").innerHTML = message;
+
+    })
+
+  </script>
+
+
+</body>
+</html>

@@ -2,11 +2,11 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="/css/ezenAcademyScore.css">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ezen Academy 중학교 성적관리_김재훈</title>
-  <script type="module" src="js/app.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <script type="module" src="./js/app.js" defer></script>
 </head>
 <body>
   <section>
@@ -14,28 +14,28 @@
     <div class = "numBox">
       <span>번호</span>
       <input type="text" maxlength= 255 id="ssn">
-      <button> 조  회 </button>
-      <button> 삭  제 </button>
+      <button id="searchSsn"> 조  회 </button>
+      <button id="delete"> 삭  제 </button>
 
     </div>
     <div class = "nameBox">
       <span>이름</span>
-      <input type = "text" maxlength= 255>
-      <button> 검  색 </button>
+      <input type = "text" maxlength= 255 id="name">
+      <button id="searchName"> 검  색 </button>
       
     </div>
     <div class = "subjectBox">
       <span>국어</span>
-      <input type = "text"> &nbsp;
+      <input type = "text" id="korean"> &nbsp;
       <span>영어</span>
-      <input type = "text" maxlength= 30> &nbsp;
+      <input type = "text" maxlength= 30 id="english"> &nbsp;
       <span>수학</span>
-      <input type = "text" maxlength= 60>
-      <button id="addButton"> 등  록 </button>
+      <input type = "text" maxlength= 60 id="math">
+      <button id="add"> 등  록 </button>
       <button id="all"> 전체조회 </button>
     </div>
 
-    <div id="message" style="color: blue"></div>
+    <p id="message" style="color: blue;"></p>
 
     <table>
       <tr>
@@ -48,14 +48,14 @@
         <th>평균</th>
 
       </tr>
-      <tr>
-        <th>1</th>
-        <th>강감찬</th>
-        <th>88</th>
-        <th>70</th>
-        <th>90</th>
-        <th>248</th>
-        <th>82.7</th>
+      <tr">
+        <th id="raw1_1"></th>
+        <th id="raw1_2"></th>
+        <th id="raw1_3"></th>
+        <th id="raw1_4"></th>
+        <th id="raw1_5"></th>
+        <th id="raw1_6"></th>
+        <th id="raw1_7"></th>
         
       </tr>
       <tr>

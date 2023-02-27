@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .menu {
+      background-color: azure;
+      padding: 10px 20px;
+    }
+    .button{
+      background-color: blue;
+      color: yellowgreen;
+      padding: 5px 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="myDiv" onclick="alert('바디 클릭')">
+  <div class="menu" >
+    <button class="button">Java</button>
+    <button class="button">JavaScript</button>
+    <button class="button">SQL</button>
+  </div>
+</div>
+
+  <script>
+    // 이벤트 버블링을 이용한 이벤트 일괄 처리
+    document.querySelector(".menu").addEventListener("click", event =>{
+      let buttonName = event.target.textContent;
+      // console.log(`${buttonName} 버튼 클릭`);
+      if(buttonName === 'Java'){
+        console.log('등록이요');
+      }else if(buttonName ==='JavaScript'){
+        console.log('목록이요');
+      }else {
+        console.log('기타요');
+      }
+    });
+
+    // 이벤트 캡쳐링
+    document.querySelector("#myDiv").addEventListener("click", event => {
+      console.log("DIV 클릭이요");
+    }, true);
+
+    
+  </script>
+  
+</body>
+</html>
