@@ -14,7 +14,7 @@ function Student(ssn, name, korean, math, english){
 Student.prototype.schooName = "EZEN MIDDLE SCHOOL";
 // Student 생성자 함수가 참조하고 있는 Student 프로토타입 객체에 메소드 추가
 Student.prototype.getSum = function(){
-    return this.korean + this.math + this.english;
+    return Number(this.korean) + Number(this.math) + Number(this.english);
 }
 
 Student.prototype.getAverage = function(){

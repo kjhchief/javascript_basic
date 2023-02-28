@@ -58,7 +58,7 @@ function findAll(){
     document.querySelector("#raw1_4").innerHTML= student.english;
     document.querySelector("#raw1_5").innerHTML= student.math;
     document.querySelector("#raw1_6").innerHTML= student.getSum();
-    document.querySelector("#raw1_7").innerHTML= student.ssn;
+    document.querySelector("#raw1_7").innerHTML= student.getAverage();
   });
 }
 
