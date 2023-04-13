@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css" >
+  <style>
+    .butt:hover,
+.butt.active {
+  background: #4582EC !important;
+  color: white !important;
+}
+.butt:visited {
+  background: #7ea338 !important;
+  color: white !important;
+}
+  </style>
+</head>
+<body>
+  <button type="button" class="butt col btn btn-light mx-1" th:each="day, loopStat : ${days}" th:id="'b' + ${day.monthDay}" onclick="change_btn(event);">
+    <span th:text="${day.dayofMonth}">15 </span><br>
+    <span th:text="${day.monthDay}" style="display:none"></span>
+    <strong>
+      <span th:text="${day.dayofweek}" th:unless="${day.dayofweek == '토'}" th:if="${day.dayofweek != '일'}">월</span>
+      <span th:if="${day.dayofweek == '토'}" style="color:blue">토</span>
+      <span th:if="${day.dayofweek == '일'}" style="color:red">일</span>
+    </strong>
+  </button>
+
+  <button type="button" class="butt col btn btn-light mx-1" th:each="day, loopStat : ${days}" th:id="'b' + ${day.monthDay}" onclick="change_btn(event);">
+    <span th:text="${day.dayofMonth}">15 </span><br>
+    <span th:text="${day.monthDay}" style="display:none"></span>
+    <strong>
+      <span th:text="${day.dayofweek}" th:unless="${day.dayofweek == '토'}" th:if="${day.dayofweek != '일'}">월</span>
+      <span th:if="${day.dayofweek == '토'}" style="color:blue">토</span>
+      <span th:if="${day.dayofweek == '일'}" style="color:red">일</span>
+    </strong>
+  </button>
+  
+  <script>
+
+function change_btn(e) {
+  var btns = document.querySelectorAll(".butt");
+  btns.forEach(function (btn, i) {
+    if (e.currentTarget == btn) {
+      btn.classList.add("active");
+    } else {
+      btn.classList.remove("active");
+    }
+  });
+  console.log(e.currentTarget);
+}
+  </script>
+</body>
+</html>
